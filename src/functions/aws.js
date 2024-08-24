@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_ENDPOINT = process.env.VUE_APP_API_ENDPOINT; // EC2 public IP or domain
 
-async function uploadFile(file) {
+export const uploadFile = async (file) => {
   const formData = new FormData();
   formData.append('file', file);
 
