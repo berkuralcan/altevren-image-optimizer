@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
-  publicPath: "https://berkuralcan.github.io/altevren-image-optimizer/",
-  transpileDependencies: true
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/your-repo-name/'
+    : '/'  transpileDependencies: true
 })
