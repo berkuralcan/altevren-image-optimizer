@@ -7,7 +7,7 @@ export const uploadFile = async (file, name, desiredWidth) => {
   const formData = new FormData();
   formData.append('file', file);
   formData.append('name', name);
-  formData.append('desiredWidth', desiredWidth);
+  formData.append('desired_width', desiredWidth);
 
   try {
     const response = await axios.post(`${API_ENDPOINT}/upload`, formData, {
