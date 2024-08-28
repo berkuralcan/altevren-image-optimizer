@@ -1,7 +1,6 @@
 const API_ENDPOINT = process.env.VUE_APP_API_ENDPOINT; // EC2 public IP or domain
 
 export const uploadFile = async (file, name, desiredWidth) => {
-  console.log('API Endpoint:', API_ENDPOINT);
 
     const fileExtension = file.name.split('.').pop();
 
