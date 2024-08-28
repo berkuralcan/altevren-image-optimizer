@@ -2,10 +2,15 @@ const API_ENDPOINT = process.env.VUE_APP_API_ENDPOINT; // EC2 public IP or domai
 
 export const uploadFile = async (file, name, desiredWidth) => {
   console.log('API Endpoint:', API_ENDPOINT);
+
+    const fileExtension = file.name.split('.').pop();
+
+    const newFileName = `${name}_${desiredWidth}.${fileExtension}`;
+  
+
   const formData = new FormData();
-  formData.append('file', file);
-  formData.append('name', name);
-  formData.append('desired_width', desiredWidth);
+  formData.append('file', file, newFileName);
+
 
   // Log the FormData contents
   for (let [key, value] of formData.entries()) {
@@ -16,7 +21,6 @@ export const uploadFile = async (file, name, desiredWidth) => {
     const response = await fetch(`${API_ENDPOINT}/upload`, {
       method: 'POST',
       body: formData,
-      // No need to set Content-Type header, it's automatically set with boundary
     });
 
     if (!response.ok) {
