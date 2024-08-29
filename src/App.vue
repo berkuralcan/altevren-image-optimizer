@@ -110,7 +110,6 @@ async function uploadFiles() {
   flex-direction: column;
   padding: 1.6rem;
   position: relative;
-  height: 100vh;
 
 }
 
@@ -137,6 +136,7 @@ async function uploadFiles() {
   align-items: center;
   gap: 1rem;
   width: 20%;
+  height: 100%;
 
 }
 
